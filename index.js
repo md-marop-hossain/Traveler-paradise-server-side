@@ -73,10 +73,22 @@ async function run() {
         //DELETE API
         app.delete('/orders/:id', async (req, res) => {
             const id = req.params.id;
+            console.log("iddddd: ", id);
             const query = { _id: ObjectId(id) }
+            console.log("queryyyy : ", query)
             const result = await ordersCollection.deleteOne(query);
             res.json(result);
         })
+        //DELETE API
+        // app.delete('/orders/:idd', async (req, res) => {
+        //     const id = req.params.id;
+        //     console.log("id: ", id);
+        //     const query = { _id: ObjectId(id) }
+        //     console.log("query ", query)
+        //     const result = await ordersCollection.deleteOne(query);
+        //     console.log("result: ", result);
+        //     res.json(result);
+        // })
 
         //POST API
         app.post('/services', async (req, res) => {
